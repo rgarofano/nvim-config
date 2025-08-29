@@ -42,7 +42,7 @@ vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>", {})
 vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>", {})
 vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<CR>", {})
 vim.keymap.set("n", "<C-l>", "<cmd>wincmd k<CR>", {})
-vim.keymap.set("t", "<C-n>", "C-\\><C-N>")
+vim.keymap.set("t", "<C-n>", "<C-\\><C-N>")
 vim.keymap.set("n", "<space>tt", function()
 	vim.cmd.split()
 	vim.cmd.term()
@@ -58,3 +58,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+vim.g.lazyvim_check_order = false
