@@ -20,17 +20,7 @@ return {
         lspconfig.lua_ls.setup({
             capabilities = capabilities,
         })
-        lspconfig.clangd.setup({
-            capabilities = capabilities,
-            cmd = {
-                "clangd",
-                "--fallback-style=webkit",
-            },
-        })
         lspconfig.tailwindcss.setup({
-            capabilities = capabilities,
-        })
-        lspconfig.bashls.setup({
             capabilities = capabilities,
         })
         lspconfig.ruby_lsp.setup({
@@ -39,5 +29,7 @@ return {
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+        -- enable inline diagnostics
+        vim.diagnostic.config({ virtual_text = true })
     end,
 }
