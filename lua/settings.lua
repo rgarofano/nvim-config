@@ -47,16 +47,3 @@ vim.keymap.set("n", "<space>tt", function()
 	vim.cmd.split()
 	vim.cmd.term()
 end)
--- enable inline diagnostics
-vim.diagnostic.config({ virtual_text = true })
-
--- Highlight when yanking
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-})
-
-vim.g.lazyvim_check_order = false
