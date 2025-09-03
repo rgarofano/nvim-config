@@ -6,10 +6,6 @@ return {
         config = function()
             require("catppuccin").setup({
                 transparent_background = true,
-                float = {
-                    transparent = false,
-                    solid = false,
-                }
             })
         end,
     },
@@ -81,6 +77,15 @@ return {
                 end
             })
         end,
+    },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        config = function()
+            require("rose-pine").setup({
+                variant = "dawn",
+            })
+        end
     },
     {
         "rgarofano/omarchy-theme.nvim",
