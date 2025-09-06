@@ -20,10 +20,13 @@ return {
         lspconfig.lua_ls.setup({
             capabilities = capabilities,
         })
+        lspconfig.ruby_lsp.setup({
+            capabilities = capabilities,
+        })
         lspconfig.tailwindcss.setup({
             capabilities = capabilities,
         })
-        lspconfig.ruby_lsp.setup({
+        lspconfig.ts_ls.setup({
             capabilities = capabilities,
         })
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
