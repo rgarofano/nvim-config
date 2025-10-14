@@ -30,20 +30,20 @@ vim.opt.scrolloff = 10
 vim.opt.cursorline = true
 
 -- Remap copy to system clipboard
-vim.keymap.set("n", "<leader>y", '"+y', {})
-vim.keymap.set("v", "<leader>y", '"+y', {})
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
 -- Remove search highlighting
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Cycle through quick fix list
-vim.keymap.set("n", "<leader>cn", "<cmd>cnext<CR>", {})
-vim.keymap.set("n", "<leader>cp", "<cmd>cprevious<CR>", {})
+vim.keymap.set("n", "<leader>cn", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<leader>cp", "<cmd>cprevious<CR>")
 -- Navigate between vim windows with C-{h,j,k,l}
-vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>", {})
-vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>", {})
-vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<CR>", {})
-vim.keymap.set("n", "<C-l>", "<cmd>wincmd k<CR>", {})
+vim.keymap.set({"n", "i", "t"}, "<C-h>", "<cmd>wincmd h<CR>")
+vim.keymap.set({"n", "i", "t"}, "<C-j>", "<cmd>wincmd j<CR>")
+vim.keymap.set({"n", "i", "t"}, "<C-k>", "<cmd>wincmd k<CR>")
+vim.keymap.set({"n", "i", "t"}, "<C-l>", "<cmd>wincmd k<CR>")
 -- terminal
-vim.keymap.set("t", "<C-j>", "<C-\\><C-N>")
+vim.keymap.set("t", "<C-o>", "<C-\\><C-N>")
 vim.keymap.set("n", "<leader>tt", function()
 	vim.cmd.split()
 	vim.cmd.term()
