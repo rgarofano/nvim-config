@@ -41,7 +41,7 @@ vim.keymap.set("n", "<leader>cp", "<cmd>cprevious<CR>")
 vim.keymap.set({"n", "i", "t"}, "<C-h>", "<cmd>wincmd h<CR>")
 vim.keymap.set({"n", "i", "t"}, "<C-j>", "<cmd>wincmd j<CR>")
 vim.keymap.set({"n", "i", "t"}, "<C-k>", "<cmd>wincmd k<CR>")
-vim.keymap.set({"n", "i", "t"}, "<C-l>", "<cmd>wincmd k<CR>")
+vim.keymap.set({"n", "i", "t"}, "<C-l>", "<cmd>wincmd l<CR>")
 -- terminal
 vim.keymap.set("t", "<C-o>", "<C-\\><C-N>")
 vim.keymap.set("n", "<leader>tt", function()
