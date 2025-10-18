@@ -71,4 +71,4 @@ end
 
 vim.api.nvim_create_user_command("FloatingTerminal", toggle_floating_terminal, {})
 
-vim.keymap.set({"n", "t"}, "<leader>ft", "<cmd>FloatingTerminal<Enter>")
+vim.keymap.set("n", "<leader>ft", "<cmd>FloatingTerminal<Enter>")
