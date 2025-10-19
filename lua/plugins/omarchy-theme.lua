@@ -89,6 +89,11 @@ return {
         end
     },
     {
+        "kepano/flexoki-neovim",
+        name = "flexoki-light",
+        lazy = true,
+    },
+    {
         "rgarofano/omarchy-theme.nvim",
         config = function()
             require("omarchy-theme").setup()
