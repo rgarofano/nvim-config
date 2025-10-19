@@ -72,3 +72,47 @@ end
 vim.api.nvim_create_user_command("FloatingTerminal", toggle_floating_terminal, {})
 
 vim.keymap.set("n", "<leader>ft", "<cmd>FloatingTerminal<Enter>")
+
+local function resize_window(direction)
+    local curwin = vim.api.nvim_get_current_win()
+    local wininfo = vim.fn.getwininfo(curwin)[1]
+
+    if direction == "left" or direction == "right" then
+        local total_cols = vim.o.columns
+        local right_edge = wininfo.wincol + wininfo.width
+        if (direction == "left" and right_edge >= total_cols) or (direction == "right" and right_edge < total_cols) then
+            vim.cmd("vertical resize +2")
+        else
+            vim.cmd("vertical resize -2")
+        end
+    elseif direction == "up" or direction == "down" then
+        local wins = vim.api.nvim_tabpage_list_wins(0)
+        local max_bottom = 0
+        for _, w in ipairs(wins) do
+            local info = vim.fn.getwininfo(w)[1]
+            local bottom = info.winrow + info.height - 1
+            if bottom > max_bottom then
+                max_bottom = bottom
+            end
+        end
+        local bottom_edge = wininfo.winrow + wininfo.height - 1
+        if (direction == "up" and bottom_edge >= max_bottom) or (direction == "down" and bottom_edge < max_bottom) then
+            vim.cmd("resize +2")
+        else
+            vim.cmd("resize -2")
+        end
+    end
+end
+
+vim.keymap.set({"n", "t"}, "<C-Left>", function()
+    resize_window("left")
+end)
+vim.keymap.set({"n", "t"}, "<C-Right>", function()
+    resize_window("right")
+end)
+vim.keymap.set({"n", "t"}, "<C-Up>", function()
+    resize_window("up")
+end)
+vim.keymap.set({"n", "t"}, "<C-Down>", function()
+    resize_window("down")
+end)
