@@ -1,0 +1,35 @@
+local helper = require("windows.helper")
+
+-- Move between windows
+vim.keymap.set({ "n", "i", "t" }, "<C-h>","<cmd>wincmd h<Enter>")
+vim.keymap.set({ "n", "i", "t" }, "<C-j>","<cmd>wincmd j<Enter>")
+vim.keymap.set({ "n", "i", "t" }, "<C-k>","<cmd>wincmd k<Enter>")
+vim.keymap.set({ "n", "i", "t" }, "<C-l>","<cmd>wincmd l<Enter>")
+
+-- Resizing windows
+vim.keymap.set({"n", "t"}, "<C-S-h>", function()
+    helper.resize_window("left")
+end)
+vim.keymap.set({"n", "t"}, "<C-S-j>", function()
+    helper.resize_window("down")
+end)
+vim.keymap.set({"n", "t"}, "<C-S-k>", function()
+    helper.resize_window("up")
+end)
+vim.keymap.set({"n", "t"}, "<C-S-l>", function()
+    helper.resize_window("right")
+end)
+
+-- Moving windows
+vim.keymap.set({"n", "t"}, "<C-S-Left>", function()
+    helper.swap_window_buffers("left")
+end)
+vim.keymap.set({"n", "t"}, "<C-S-Down>", function()
+    helper.swap_window_buffers("down")
+end)
+vim.keymap.set({"n", "t"}, "<C-S-Up>", function()
+    helper.swap_window_buffers("up")
+end)
+vim.keymap.set({"n", "t"}, "<C-S-Right>", function()
+    helper.swap_window_buffers("right")
+end)
