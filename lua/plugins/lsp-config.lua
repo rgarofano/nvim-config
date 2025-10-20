@@ -15,33 +15,10 @@ return {
         },
     },
     config = function()
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
-        local lspconfig = require("lspconfig")
-        lspconfig.lua_ls.setup({
-            capabilities = capabilities,
-        })
-        lspconfig.ruby_lsp.setup({
-            capabilities = capabilities,
-        })
-        lspconfig.tailwindcss.setup({
-            capabilities = capabilities,
-        })
-        lspconfig.ts_ls.setup({
-            capabilities = capabilities,
-        })
-        lspconfig.jedi_language_server.setup({
-            capabilities = capabilities,
-        })
-        vim.keymap.set("n", "K", vim.lsp.buf.hover)
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-        -- enable inline diagnostics
-        vim.diagnostic.config({ virtual_text = true })
-        vim.keymap.set("n", "<leader>qd", vim.diagnostic.setqflist)
-
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("lsp.format", {}),
             callback = function(args)
+                -- Format on save
                 local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
                 if not client:supports_method("textDocument/willSaveWaitUntil")
                     and client:supports_method("textDocument/formatting") then
@@ -53,7 +30,22 @@ return {
                         end,
                     })
                 end
+                -- LSP bindings
+                vim.keymap.set("n", "K", vim.lsp.buf.hover)
+                vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+                vim.keymap.set("n", "mv", vim.lsp.buf.rename)
+                -- Diagnostics
+                vim.diagnostic.config({ virtual_text = true })
+                vim.keymap.set("n", "<leader>qd", vim.diagnostic.setqflist)
             end
+        })
+        vim.lsp.enable({
+            "lua_ls",
+            "ruby_lsp",
+            "ts_ls",
+            "tailwindcss",
+            "jedi_language_server"
         })
     end,
 }
