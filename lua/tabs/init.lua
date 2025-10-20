@@ -1,3 +1,5 @@
+-- Create new tab
+vim.keymap.set("n", "<C-t>", "<cmd>tabnew<Enter>")
 -- Move window to tab
 vim.keymap.set("n", "<C-S-t>", "<C-w>T")
 -- Cycle through tabs
