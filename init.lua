@@ -12,10 +12,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("buffers")
-require("clipboard")
 require("settings")
+require("lazy").setup("plugins")
+require("buffers")
+require("windows")
 require("tabs")
 require("terminal")
-require("windows")
-require("lazy").setup("plugins")
+require("clipboard")
