@@ -1,14 +1,15 @@
 -- Easily switch to normal mode for copying, scrolling, etc.
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 -- Open terminal in horizontal split
-vim.keymap.set("n", "<leader>ht", function()
+vim.keymap.set({ "n", "t" }, "\\h", function()
     vim.cmd.split()
     vim.cmd.terminal()
     vim.cmd("startinsert")
 end)
 -- Open terminal in vertical split
-vim.keymap.set("n", "<leader>vt", function()
-    vim.cmd.vsplit() vim.cmd.terminal()
+vim.keymap.set({ "n", "t" }, "\\v", function()
+    vim.cmd.vsplit()
+    vim.cmd.terminal()
     vim.cmd("startinsert")
 end)
 
@@ -71,4 +72,4 @@ end
 
 vim.api.nvim_create_user_command("FloatingTerminal", toggle_floating_terminal, {})
 
-vim.keymap.set("n", "<leader>ft", "<cmd>FloatingTerminal<Enter>")
+vim.keymap.set({ "n", "t" }, "\\t", "<cmd>FloatingTerminal<Enter>")
