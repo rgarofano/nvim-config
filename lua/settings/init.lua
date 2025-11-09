@@ -25,8 +25,6 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 -- Minimum number of lines above and below the cursor
 vim.opt.scrolloff = 10
--- Highlight the current line
-vim.opt.cursorline = true
 -- Remove search highlighting
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Highlight when yanking

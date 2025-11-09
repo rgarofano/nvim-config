@@ -35,9 +35,9 @@ return {
         lazy = true
     },
     {
-      "ellisonleao/gruvbox.nvim",
-      name = "gruvbox",
-      lazy = true
+        "ellisonleao/gruvbox.nvim",
+        name = "gruvbox",
+        lazy = true
     },
     {
         "rebelot/kanagawa.nvim",
