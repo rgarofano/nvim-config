@@ -1,5 +1,7 @@
 -- Saving a buffer
 vim.keymap.set("n", "<C-s>", "<cmd>w<Enter>")
+-- Close all windows
+vim.keymap.set("n", "<C-S-w>", "<cmd>qa<Enter>")
 -- Closing a buffer
 vim.keymap.set("n", "<C-w>", "<cmd>q<Enter>")
 -- Swapping between buffers
