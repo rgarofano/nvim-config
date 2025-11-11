@@ -35,3 +35,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+-- Remove treesitter syntax highlighting for certain files
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = { "*.cpp", "*.c", "*.rb", "*.py", "*.sh" },
+    callback = function()
+        vim.schedule(function()
+            vim.cmd("TSBufDisable highlight")
+        end)
+    end
+})
