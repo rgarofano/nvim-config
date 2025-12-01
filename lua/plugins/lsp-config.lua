@@ -41,11 +41,12 @@ return {
             end
         })
         vim.lsp.enable({
+            "clangd",
+            "jedi_language_server",
             "lua_ls",
             "ruby_lsp",
             "ts_ls",
             "tailwindcss",
-            "jedi_language_server"
         })
     end,
 }
