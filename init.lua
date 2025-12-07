@@ -14,7 +14,3 @@ vim.opt.rtp:prepend(lazypath)
 
 require("settings")
 require("lazy").setup("plugins")
-require("buffers")
-require("windows")
-require("tabs")
-require("clipboard")

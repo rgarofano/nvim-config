@@ -40,6 +40,13 @@ return {
                 vim.keymap.set("n", "<leader>qd", vim.diagnostic.setqflist)
             end
         })
+        vim.lsp.config.clangd = {
+            cmd = {
+                "clangd",
+                "--clang-tidy",
+                "--fallback-style=webkit"
+            }
+        }
         vim.lsp.enable({
             "clangd",
             "jedi_language_server",
