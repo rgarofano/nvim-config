@@ -48,6 +48,7 @@ return {
             }
         }
         vim.lsp.enable({
+            "bashls",
             "clangd",
             "jedi_language_server",
             "lua_ls",
