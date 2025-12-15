@@ -5,6 +5,6 @@ return {
         suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
     },
     keys = {
-        { "<leader>ps", "<cmd>AutoSession search<Enter>", desc = "Pick session" },
+        { "<leader>fs", "<cmd>AutoSession search<Enter>", desc = "Find session" },
     },
 }
