@@ -4,7 +4,7 @@ return {
         require("toggleterm").setup()
         vim.keymap.set({ "n", "t" }, "\\f", "<cmd>ToggleTerm direction=float<Enter>")
         -- Easily switch to normal mode for copying, scrolling, etc.
-        vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+        vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
         -- Open terminal in current window
         vim.keymap.set("n", "\\t", "<cmd>terminal<Enter>")
         -- Open terminal in horizontal split
