@@ -6,7 +6,10 @@ return {
         -- Easily switch to normal mode for copying, scrolling, etc.
         vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
         -- Open terminal in current window
-        vim.keymap.set("n", "\\t", "<cmd>terminal<Enter>")
+        vim.keymap.set("n", "\\t", function()
+            vim.cmd.terminal()
+            vim.cmd("startinsert")
+        end)
         -- Open terminal in horizontal split
         vim.keymap.set({ "n", "t" }, "\\s", function()
             vim.cmd.split()
