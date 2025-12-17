@@ -22,5 +22,12 @@ return {
             vim.cmd.terminal()
             vim.cmd("startinsert")
         end)
+        -- Always start in insert mode when moving to a terminal window
+        vim.api.nvim_create_autocmd("WinEnter", {
+            pattern = { "term://*" },
+            callback = function()
+                vim.cmd("startinsert")
+            end
+        })
     end
 }
