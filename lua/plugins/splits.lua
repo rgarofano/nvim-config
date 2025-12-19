@@ -14,9 +14,9 @@ return {
         vim.keymap.set({ "n", "t" }, "<M-S-k>", split.resize_up)
         vim.keymap.set({ "n", "t" }, "<M-S-l>", split.resize_right)
         -- Move split buffers around
-        vim.keymap.set({ "n", "t" }, "<M-Left>", split.swap_buf_left)
-        vim.keymap.set({ "n", "t" }, "<M-Down>", split.swap_buf_down)
-        vim.keymap.set({ "n", "t" }, "<M-Up>", split.swap_buf_up)
-        vim.keymap.set({ "n", "t" }, "<M-Right>", split.swap_buf_right)
+        vim.keymap.set({ "n", "t" }, "<M-S-Left>", split.swap_buf_left)
+        vim.keymap.set({ "n", "t" }, "<M-S-Down>", split.swap_buf_down)
+        vim.keymap.set({ "n", "t" }, "<M-S-Up>", split.swap_buf_up)
+        vim.keymap.set({ "n", "t" }, "<M-S-Right>", split.swap_buf_right)
     end
 }
